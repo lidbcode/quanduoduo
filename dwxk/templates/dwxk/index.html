@@ -9,45 +9,20 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}"/>
 </head>
 <body>
-<a href="https://www.daweixinke.com/sqe.php?s=/User/home">大微信客</a>
 <div>
     {% for item in items %}
-    <h1>{{item.product_id}}</h1>
-    <image src="{{item.image_urls_head}}"></image>
+    <a href="{{item.coupon}}">
+        <div class="item">
+            <image class="item_image" src="{{item.image_urls_head}}"></image>
+            <text class="item_name">{{item.ad_name}}</text>
+            <text class="coupon">券 : {{item.money}}元</text>
+            <text class="sale_num">销量 : {{item.sales_num}}</text>
+            <text class="price_value">￥{{item.ad_coupon_price}}</text>
+            <button class="buy_button">领券购买</button>
+            <text class="test">{{item.coupon}}</text>
+        </div>
+    </a>
     {% endfor %}
-</div>
-
-<div class="header">
-    <div class="slogan"><h1>为您精选，为您呈现</h1></div>
-    <div class="selector">
-        <div class="chuchujie">楚楚街精品</div>
-        <div class="taobao">淘宝精品</div>
-        <div class="jingdong">京东</div>
-        <div class="">天猫</div>
-    </div>
-
-</div>
-<div class="footer">
-    <a href="https://www.daweixinke.com/sqe.php?s=/User/home" target="_blank">xxxx</a>
-</div>
-
-<div class=“headerBar”>
-    <div class="topBar">
-        <div class="">
-            <div class="leftArea">
-                <a href="#" class="collection">收藏博客</a>
-            </div>
-            <div class="rightArea">
-                <a href="#" class="collection">收藏博客</a>
-            </div>
-        </div>
-    </div>
-    <div class="logoBar">
-        <div>
-        </div>
-
-    </div>
-
 </div>
 </body>
 </html>
