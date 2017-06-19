@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>券多多</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <meta name="keywords" content="楚楚客,大微信客，优惠券">
+    <meta name="describe" content="多家知名电商品牌的优质商品">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}"/>
+</head>
+<body>
+<a href="https://www.daweixinke.com/sqe.php?s=/User/home">大微信客</a>
+<div>
+    {% for item in items %}
+    <h1>{{item.product_id}}</h1>
+    <image src="{{item.image_urls_head}}"></image>
+    {% endfor %}
+</div>
+
+<div class="header">
+    <div class="slogan"><h1>为您精选，为您呈现</h1></div>
+    <div class="selector">
+        <div class="chuchujie">楚楚街精品</div>
+        <div class="taobao">淘宝精品</div>
+        <div class="jingdong">京东</div>
+        <div class="">天猫</div>
+    </div>
+
+</div>
+<div class="footer">
+    <a href="https://www.daweixinke.com/sqe.php?s=/User/home" target="_blank">xxxx</a>
+</div>
+
+<div class=“headerBar”>
+    <div class="topBar">
+        <div class="">
+            <div class="leftArea">
+                <a href="#" class="collection">收藏博客</a>
+            </div>
+            <div class="rightArea">
+                <a href="#" class="collection">收藏博客</a>
+            </div>
+        </div>
+    </div>
+    <div class="logoBar">
+        <div>
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>
