@@ -11,7 +11,7 @@ import json
 def index(request):
     url = "https://www.daweixinke.com/sqe.php"
     items = []
-    for page in range(1, 11):
+    for page in range(1, 3):
         parameter = "?s=/CCKItem/getAdItemList&pageNum=10&order_status=10&page="
         response = urllib.urlopen(url + parameter + str(page))
         result = json.load(response)
