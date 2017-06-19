@@ -1,0 +1,12 @@
+.idea
+.idea/*.xml
+*.iml
+target
+lib/*
+logs/*
+flags/*.done
+flags/*.busy
+flags/*.failed
+repo/org
+conf/*.java
+bin/*
