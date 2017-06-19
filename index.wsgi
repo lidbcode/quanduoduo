@@ -1,4 +1,4 @@
 import sae
-from quanduoduo import wsgi
+from Web import wsgi
 
 application = sae.create_wsgi_app(wsgi.application)
