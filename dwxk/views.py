@@ -46,3 +46,7 @@ def getCoupon(data):
     result = json.load(response)
     coupon = result["data"]["couponShare"]["discount_url"]
     return coupon
+
+
+def test(requset):
+    return HttpResponse("welcome to test")
