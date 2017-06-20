@@ -11,13 +11,13 @@
 <body>
 <div>
     {% for item in items %}
-    <a href="{{item.coupon}}">
+    <a href="{{item.coupon_url}}">
         <div class="item">
-            <image class="item_image" src="{{item.image_urls_head}}"></image>
+            <image class="item_image" src="{{item.img_url}}"></image>
             <text class="item_name">{{item.ad_name}}</text>
-            <text class="coupon">券 : {{item.money}}元</text>
+            <text class="coupon">券 : {{item.coupon_value}}元</text>
             <text class="sale_num">销量 : {{item.sales_num}}</text>
-            <text class="price_value">￥{{item.ad_coupon_price}}</text>
+            <text class="price_value">￥{{item.price}}</text>
             <button class="buy_button">领券购买</button>
         </div>
     </a>
