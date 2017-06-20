@@ -80,6 +80,16 @@ WSGI_APPLICATION = 'coupon.wsgi.application'
 #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
 # }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'coupon',
+        'USER': 'root',
+        'PASSWORD': '!QAZxsw2',
+        'HOST': '/var/run/mysql',
+        'PORT': '3306',
+    }
+}
 
 
 # Password validation
