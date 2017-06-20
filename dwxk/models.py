@@ -13,6 +13,7 @@ class ItemsInfo(models.Model):
     ad_name = models.TextField(null=True)
     coupon_value = models.FloatField()
     price = models.FloatField()
+    sales_num = models.IntegerField()
     img_url = models.URLField()
     coupon_url = models.URLField()
     c1 = models.IntegerField()
