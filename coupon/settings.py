@@ -86,7 +86,7 @@ DATABASES = {
         'NAME': 'coupon',
         'USER': 'root',
         'PASSWORD': '!QAZxsw2',
-        'HOST': '/var/run/mysql',
+        'HOST': '127.0.0.1',
         'PORT': '3306',
     }
 }
