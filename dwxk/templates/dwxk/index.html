@@ -11,25 +11,23 @@
 <body>
 <div>
     {% for item in items %}
-    <a href="{{item.coupon_url}}">
-        <div class="item">
-            <div class="item-left">
-                <image class="item-image" src="{{item.img_url}}"></image>
-            </div>
-            <div class="item-right">
-                <div class="item-name">
+    <div class="item">
+        <div class="item-left">
+            <image class="item-image" src="{{item.img_url}}"></image>
+        </div>
+        <div class="item-right">
+            <div class="item-name">
                     <span class="coupon">
                         <span class="mr3">券</span>
                         {{item.coupon_value}}元
                     </span>
-                    {{item.ad_name}}
-                </div>
+                {{item.ad_name}}
             </div>
-            <div class="price-value">券后价: {{item.price}}</div>
-            <div class="sale-num">销量 : {{item.sales_num}}</div>
-            <button class="buy-button">领券购买</button>
         </div>
-    </a>
+        <div class="price-value">券后价: {{item.price}}</div>
+        <div class="sale-num">销量 : {{item.sales_num}}</div>
+        <button class="buy-button">领券购买</button>
+    </div>
     {% endfor %}
 </div>
 </body>
