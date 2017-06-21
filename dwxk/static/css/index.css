@@ -9,7 +9,7 @@
   background: #A3D0C3;
 }
 .search-box input {
-  width: 100%;
+  width: 75%;
   height: 42px;
   padding-left: 10px;
   border: 2px solid #7BA7AB;
@@ -22,7 +22,7 @@
   position: absolute;
   top: 0;
   right: 0px;
-  width: 42px;
+  width: 25%;
   height: 42px;
   border: none;
   background: #7BA7AB;
@@ -30,7 +30,7 @@
   cursor: pointer;
 }
 .search-box button:before {
-  content: "\f002";
+  content: "搜索";
   font-family: FontAwesome;
   font-size: 16px;
   color: #F9F0DA;
