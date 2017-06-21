@@ -1,8 +1,6 @@
+.clearfix:after{clear:both; content:''; font-size:0; display:block; visibility:hidden; height:0}
 .fl{float: left;}
 
-.shop-list{
-	width: 340px;
-}
 .item-left{
   width: 120px;
   position: relative;
@@ -28,6 +26,10 @@
   -webkit-line-clamp: 2;
   overflow: hidden;
   color: #333;
+}
+.sale-info{
+	color: #7e7e7e;
+	line-height: 40px;
 }
 .coupon{
   background: #ff6c58;

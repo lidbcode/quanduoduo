@@ -9,7 +9,8 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}"/>
 </head>
 <body>
-<div class="item-list">
+<div class="item-list clearfix">
+    ::before
     {% for item in items %}
     <div class="item">
         <div class="item-left">
@@ -24,11 +25,16 @@
                 {{item.ad_name}}
             </div>
         </div>
-        <div class="price-value f1">券后价: {{item.price}}</div>
-        <div class="sale-num f1">销量 : {{item.sales_num}}</div>
+        <div class="sale-info clearfix">
+            ::before
+            <div class="price-value fl">券后价: {{item.price}}</div>
+            <div class="sale-num fl">销量 : {{item.sales_num}}</div>
+            ::after
+        </div>
         <button class="buy-button">领券购买</button>
     </div>
     {% endfor %}
+    ::after
 </div>
 </body>
 </html>
