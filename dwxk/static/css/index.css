@@ -2,6 +2,11 @@
 .fl{float: left;}
 .fr{float: right;}
 /*搜索框*/
+.search-form {
+	position:relative;
+	width:100%;
+	margin:0 auto;
+}
 .search-box input {
 	border:2px solid #c5464a;
 	border-radius:5px;
