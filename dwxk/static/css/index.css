@@ -1,7 +1,12 @@
 .clearfix:after{clear:both; content:''; font-size:0; display:block; visibility:hidden; height:0}
 .fl{float: left;}
 .item-list{
-	width: 340px;
+  width: 360px;
+  background: #fff;
+  padding: 10px;
+}
+.item{
+  width: 340px;
 }
 .item-left{
   width: 120px;
