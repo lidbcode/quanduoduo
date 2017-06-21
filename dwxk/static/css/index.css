@@ -1,5 +1,26 @@
-.item-img{
-	width: 220px;
-	position: relative;
-	float: left;
+.item-left{
+  width: 120px;
+  position: relative;
+  float: left;
+}
+.item-left img{width:100%;display: block;}
+.item-right{
+  width: 220px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-left: 15px;
+  float: left;
+}
+.item-name{
+  font-size: 14px;
+  line-height: 16px;
+  height: 32px;
+  margin-bottom: 16px;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  color: #333;
 }
