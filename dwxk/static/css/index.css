@@ -11,7 +11,7 @@
 .search-box input {
   width: 80%;
   height: 42px;
-  padding-left: 2%;
+  padding-left: 0;
   border: 2px solid #7BA7AB;
   border-radius: 5px;
   outline: none;
