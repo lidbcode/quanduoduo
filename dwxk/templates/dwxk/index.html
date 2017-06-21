@@ -12,7 +12,6 @@
 <div class="item-list">
     {% for item in items %}
     <div class="item clearfix">
-        ::before
         <div class="item-left">
             <image class="item-image" src="{{item.img_url}}"></image>
         </div>
@@ -26,17 +25,12 @@
             </div>
         </div>
         <div class="sale-info clearfix">
-            ::before
             <div class="price-value fl">券后价: {{item.price}}元</div>
             <div class="sale-num fl">销量 : {{item.sales_num}}</div>
-            ::after
         </div>
         <div class="buy clearfix">
-            ::before
             <button class="buy-button">领券购买</button>
-            ::after
         </div>
-        ::after
     </div>
     {% endfor %}
 </div>
