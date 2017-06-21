@@ -1,3 +1,5 @@
+.fl{float: left;}
+
 .shop-list{
 	width: 340px;
 }
@@ -26,4 +28,24 @@
   -webkit-line-clamp: 2;
   overflow: hidden;
   color: #333;
+}
+.coupon{
+  background: #ff6c58;
+  height: 16px;
+  line-height: 16px;
+  font-size: 12px;
+  color: #fff;
+  padding-right: 3px;
+  -webkit-border-radius: 2px;
+  border-radius:2px;
+  padding: 0 3px;
+  vertical-align: top;
+  margin:0 2px 2px 0;
+  display: inline-block;
+}
+.mr3{
+  margin-right: 3px;
+}
+.price-value{
+  width: 110px;
 }
