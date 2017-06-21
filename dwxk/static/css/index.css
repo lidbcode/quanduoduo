@@ -60,8 +60,14 @@
   margin-right: 3px;
 }
 .price-value{
-	color: #fe634d;
-	font-size: 15px;
-	float: left;
-	width: 110px;
+  color: #fe634d;
+  font-size: 18px;
+  float: left;
+  width: 110px;
+}
+.buy-button{
+  color: ##fff;
+  font-size:22px;
+  width:120px;
+  background:##121956;
 }
