@@ -1,6 +1,8 @@
 .clearfix:after{clear:both; content:''; font-size:0; display:block; visibility:hidden; height:0}
 .fl{float: left;}
-
+.shop-list{
+	width: 340px;
+}
 .item-left{
   width: 120px;
   position: relative;
