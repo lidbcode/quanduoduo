@@ -1,5 +1,6 @@
 .clearfix:after{clear:both; content:''; font-size:0; display:block; visibility:hidden; height:0}
 .fl{float: left;}
+.fr{float: right;}
 .item-list{
   width: 360px;
 }
