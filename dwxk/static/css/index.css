@@ -66,8 +66,10 @@
   width: 110px;
 }
 .buy-button{
-  color: ##fff;
   font-size:16px;
   width:110px;
-  background:#0000FF;
+  background-color: #1B9AF7;
+  border:none;
+  color: #FFF;
 }
+
