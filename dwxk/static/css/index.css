@@ -5,7 +5,7 @@
 .search-box {
   position: relative;
   width: 96%;
-  height:2.6em;
+  height:2.2em;
   margin: 2% auto;
   background: #fff;
   border: 2px solid #7BA7AB;
@@ -13,6 +13,7 @@
 .search-box input {
   width: 80%;
   height: 2.2em;
+  line-height:2.2em;
   padding-left: 0.4em;
   border : 0;
   background: #F9F0DA;
