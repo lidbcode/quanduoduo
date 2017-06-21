@@ -8,7 +8,10 @@
   position: relative;
   float: left;
 }
-.item-left img{width:100%;display: block;}
+.item-left img{
+  width:100%;
+  display: block;
+}
 .item-right{
   width: 220px;
   -webkit-box-sizing: border-box;
