@@ -10,6 +10,12 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}"/>
 </head>
 <body>
+<div class="search-box">
+    <form>
+        <input type="text" placeholder="请输入商品的名称" name="cname">
+        <button type="submit"></button>
+    </form>
+</div>
 <div class="item-list">
     {% for item in items %}
     <div class="item clearfix" onclick="javascript:location.href='{{item.coupon_url}}'">

@@ -1,6 +1,27 @@
 .clearfix:after{clear:both; content:''; font-size:0; display:block; visibility:hidden; height:0}
 .fl{float: left;}
 .fr{float: right;}
+/*搜索框*/
+.search-box input {
+	border:2px solid #c5464a;
+	border-radius:5px;
+	background:transparent;
+	top:0;
+	right:0;
+}
+.search-box button {
+	background:#c5464a;
+	border-radius:0 5px 5px 0;
+	width:60px;
+	top:0;
+	right:0;
+}
+.search-box button:before {
+	content:"搜索";
+	font-size:13px;
+	color:#F9F0DA;
+}
+/*商品列表*/
 .item-list{
   width: 100%;
 }
