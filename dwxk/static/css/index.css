@@ -49,5 +49,8 @@
   margin-right: 3px;
 }
 .price-value{
-  width: 110px;
+	color: #fe634d;
+	font-size: 15px;
+	float: left;
+	width: 110px;
 }
