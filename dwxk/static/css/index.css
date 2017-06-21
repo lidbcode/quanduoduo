@@ -2,15 +2,15 @@
 .fl{float: left;}
 .fr{float: right;}
 .item-list{
-  width: 360px;
+  width: 100%;
 }
 .item{
-  width: 340px;
+  width: 96%;
   background: #fff;
-  padding: 10px;
+  padding: 2%;
 }
 .item-left{
-  width: 120px;
+  width: 33%;
   position: relative;
   float: left;
 }
@@ -19,7 +19,7 @@
   display: block;
 }
 .item-right{
-  width: 220px;
+  width: 67%;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding-left: 15px;
