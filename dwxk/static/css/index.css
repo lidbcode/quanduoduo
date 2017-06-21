@@ -2,11 +2,11 @@
 .fl{float: left;}
 .item-list{
   width: 360px;
-  background: #fff;
-  padding: 10px;
 }
 .item{
   width: 340px;
+  background: #fff;
+  padding: 10px;
 }
 .item-left{
   width: 120px;
