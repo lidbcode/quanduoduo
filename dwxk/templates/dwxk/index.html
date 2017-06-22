@@ -21,10 +21,10 @@
     </form>
 </div>
 <div class="category-box">
-    {% for c1 in cname %}
+    {% for cate in category %}
     <div class="category-item">
-        <div class="category-icon">{{c1}}</div>
-        <div class="categoey-name">{{c1}}</div>
+        <div class="category-icon">{{cate.c1}}</div>
+        <div class="categoey-name">{{cate.name}}</div>
     </div>
     {% endfor %}
 </div>
