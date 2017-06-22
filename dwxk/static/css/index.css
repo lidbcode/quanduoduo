@@ -1,12 +1,14 @@
 .clearfix:after{clear:both; content:''; font-size:0; display:block; visibility:hidden; height:0}
 .fl{float: left;}
+body{margin:0px 8px;}
 .fr{float: right;}
 /*搜索框*/
 .search-box {
-  position: relative;
+  position: fixed;
   width: 96%;
+  z-index:999;
   height:2.2em;
-  margin: 2% auto;
+  margin:0px auto;
   background: #fff;
   border: 2px solid #7BA7AB;
 }
@@ -46,6 +48,7 @@
 /*商品列表*/
 .item-list{
   width: 100%;
+ padding-top:4rem;
 }
 .item{
   width: 96%;
@@ -115,4 +118,3 @@
   border:none;
   color: #FFF;
 }
-
