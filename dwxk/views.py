@@ -8,7 +8,7 @@ from . import models
 
 
 def index(request):
-    items = models.ItemsInfo.objects.filter(c1 == -5)
+    items = models.ItemsInfo.objects.filter(c1 = -5)
     category = [{'c1': '-1', 'name': '女装'},
                 {'c1': '-2', 'name': '女装'},
                 {'c1': '-3', 'name': '女装'},
