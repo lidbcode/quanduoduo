@@ -8,7 +8,8 @@ from . import models
 
 def index(request):
     items = models.ItemsInfo.objects.all()
-    return render(request, 'dwxk/index.html', {'items': items})
+    cname = [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10]
+    return render(request, 'dwxk/index.html', {'items': items, 'cname': cname})
 
 
 def test(requset):
