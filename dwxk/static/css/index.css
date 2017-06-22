@@ -5,27 +5,27 @@ body{margin:0px 8px;}
 /*搜索框*/
 .search-box {
   position: fixed;
-  width: 96%;
+  top:-3px;
+  left:0px;
+  width: 100%;
   z-index:999;
   height:2.2em;
-  margin:0px auto;
+  margin:0.2em auto;
   background: #fff;
-  border: 2px solid #7BA7AB;
+  border: 2px solid #ff4200;
 }
 .search-plane {
   float:left;
   width: 80%;
   height: 2.2em;
   line-height:2.2em;
-  border : 0;
-  background: #F9F0DA
+  border : 0;A
 }
 .search-plane input {
   outline:none;
   border: 0;
   padding-left:0.4em;
-  font-size:1.2em;
-  background: #F9F0DA;
+  font-size:1rem;
 }
 .search-btn {
   float:right;
@@ -41,23 +41,40 @@ body{margin:0px 8px;}
   border:0;
   font-size:1.2em;
   color: #fff;
-  background: #7BA7AB;
+  background: #ff4200;
   cursor: pointer;
 }
-
+.clear-both{
+  clear:both;
+}
 /*分类按钮*/
 .category-box{
    width:100%;
-   padding:4rem;
+   padding-top:3rem;
+   border-bottom: 1px solid #ddd;
+
 }
 .category-item{
     width:20%;
     float:left;
+    height:7rem;
+   text-align:center
 }
-/*商品列表*/
+.category-item .category-icon{
+   width:100%;
+}
+.category-item .category-icon img{
+  width:100%;
+}
+.category-item .category-icon .categoey-name{
+   color:#666;
+  font-size:1rem;
+}
+
+/*商品
+列表*/
 .item-list{
   width: 100%;
- padding-top:4rem;
 }
 .item{
   width: 96%;
@@ -84,7 +101,7 @@ body{margin:0px 8px;}
   font-size: 14px;
   line-height: 16px;
   height: 32px;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
   word-break: break-all;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -116,14 +133,25 @@ body{margin:0px 8px;}
 }
 .price-value{
   color: #fe634d;
-  font-size: 16px;
+  font-size: 0.8rem;
+  height:40px;
+  line-height:40px;
   float: left;
-  width: 110px;
+  width: 130px;
+}
+.price-value .show-price{
+   font-size:1.3rem;
+}
+.sale-num{
+   font-size:0.9rem;
 }
 .buy-button{
   font-size:16px;
-  width:110px;
-  background-color: #1B9AF7;
+  width:90px;
+  height:1.6rem;
+  line-height:1.6rem;
+  background-color: #ff4200;
+  border-radius:2px;
   border:none;
   color: #FFF;
 }
