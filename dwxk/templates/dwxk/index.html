@@ -22,11 +22,12 @@
 </div>
 <div class="category-box">
     {% for cate in category %}
-    <div class="category-item">
+    <div class="category-item"
+         onclick="javascript:location.href='{% url 'dwxk:get_category' cid=cate.cid cname=cate.cname %}">
         <div class="category-icon">
-            <image src="/static/image/c{{cate.c1}}.png"></image>
+            <image src="/static/image/c{{cate.cid}}.png"></image>
         </div>
-        <div class="categoey-name">{{cate.name}}</div>
+        <div class="categoey-name">{{cate.cname}}</div>
     </div>
     {% endfor %}
     <div class="clear-both"></div>
@@ -46,7 +47,7 @@
                 {{item.ad_name}}
             </div>
             <div class="sale-info clearfix">
-                <div class="price-value fl">券后价:<span class="show-price" > {{item.price}}</span>元</div>
+                <div class="price-value fl">券后价:<span class="show-price"> {{item.price}}</span>元</div>
                 <div class="sale-num fr">销量 : {{item.sales_num}}</div>
             </div>
             <div class="buy clearfix fr ">

@@ -18,5 +18,6 @@ from . import views
 
 urlpatterns = [
     url(r'^index/$', views.index),
-    url(r'^$',views.test)
+    url(r'^index/(?P<cid>-[0-9]+)/(?P<cname>.*)$', views.get_category),
+    url(r'^$', views.test)
 ]
