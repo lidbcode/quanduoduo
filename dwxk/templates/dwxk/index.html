@@ -23,7 +23,9 @@
 <div class="category-box">
     {% for cate in category %}
     <div class="category-item">
-        <div class="category-icon">{{cate.c1}}</div>
+        <div class="category-icon">
+            <image src="image/c{{cate.c1}}.png"></image>
+        </div>
         <div class="categoey-name">{{cate.name}}</div>
     </div>
     {% endfor %}
