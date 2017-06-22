@@ -45,6 +45,15 @@ body{margin:0px 8px;}
   cursor: pointer;
 }
 
+/*分类按钮*/
+.category{
+   width:100%;
+   padding:4rem;
+}
+.category-item{
+    width:20%;
+    float:left;
+}
 /*商品列表*/
 .item-list{
   width: 100%;
