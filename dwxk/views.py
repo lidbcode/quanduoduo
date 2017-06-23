@@ -10,15 +10,15 @@ from . import models
 def index(request):
     items = models.ItemsInfo.objects.filter(c1=-5)
     category = [{'cid': '-1', 'cname': '女装'},
-                {'cid': '-2', 'cname': '女装'},
-                {'cid': '-3', 'cname': '女装'},
-                {'cid': '-4', 'cname': '女装'},
-                {'cid': '-5', 'cname': '女装'},
-                {'cid': '-6', 'cname': '女装'},
-                {'cid': '-7', 'cname': '女装'},
-                {'cid': '-8', 'cname': '女装'},
-                {'cid': '-9', 'cname': '女装'},
-                {'cid': '-10', 'cname': '女装'}
+                {'cid': '-2', 'cname': '箱包'},
+                {'cid': '-3', 'cname': '配饰'},
+                {'cid': '-4', 'cname': '美妆个护'},
+                {'cid': '-5', 'cname': '食品'},
+                {'cid': '-6', 'cname': '家居百货'},
+                {'cid': '-8', 'cname': '母婴'},
+                {'cid': '-9', 'cname': '手机数码'},
+                {'cid': '-12', 'cname': '鞋靴'},
+                {'cid': '-13', 'cname': '男装'}
                 ]
     return render(request, 'dwxk/index.html', {'items': items, 'category': category})
 
