@@ -8,7 +8,7 @@ from . import models
 
 
 def index(request):
-    items = models.ItemsInfo.objects.filter(c1=-5)
+    items = models.ItemsInfo.objects.order_by("-sales_num")[0:50]
     category = [{'cid': '-1', 'cname': '女装'},
                 {'cid': '-2', 'cname': '箱包'},
                 {'cid': '-3', 'cname': '配饰'},
