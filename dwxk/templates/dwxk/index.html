@@ -23,7 +23,7 @@
 <div class="category-box">
     {% for cate in category %}
     <div class="category-item"
-         onclick="javascript:location.href={% url 'dwxk:get_category' cid=cate.cid cname=cate.cname %}">
+         onclick="javascript:location.href='{% url 'dwxk:get_category' cid=cate.cid cname=cate.cname %}'">
         <div class="category-icon">
             <image src="/static/image/c{{cate.cid}}.png"></image>
         </div>
