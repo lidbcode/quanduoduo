@@ -19,6 +19,6 @@ from . import views
 urlpatterns = [
     url(r'^$', views.test),
     url(r'^index/$', views.index),
-    url(r'^category\?cid=(?P<cid>-[0-9]+)&cname=(?P<cname>.+)$', views.get_category, name='get_category'),
+    url(r'^category/(?P<cid>-[0-9]+)/(?P<cname>.+)$', views.get_category, name='get_category'),
 
 ]
