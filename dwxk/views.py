@@ -28,8 +28,7 @@ def get_category(request, cid, cname):
     return render(request, 'dwxk/category.html', {'items': items, 'cname': cname})
 
 
-def get_search(request):
-    keyword = request.GET['keyword']
+def get_search(request, keyword):
     items = models.ItemsInfo.objects.filter(name__contains=keyword)
     return render(request, 'dwxk/search.html', {'items': items, 'keyword': keyword})
 
