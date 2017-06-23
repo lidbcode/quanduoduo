@@ -24,13 +24,13 @@ def index(request):
 
 
 def get_category(request, cid, cname):
-    items = models.ItemsInfo.objects.filter(c1=cid).order_by("-sales_num")
+    items = models.ItemsInfo.objects.order_by("-sales_num").filter(c1=cid)
     return render(request, 'dwxk/category.html', {'items': items, 'cname': cname})
 
 
 def get_search(request):
     keyword = request.GET['keyword']
-    items = models.ItemsInfo.objects.filter(ad_name__contains=keyword).order_by("-sales_num")
+    items = models.ItemsInfo.objects.order_by("-sales_num").filter(ad_name__contains=keyword)
     return render(request, 'dwxk/search.html', {'items': items, 'keyword': keyword})
 
 
