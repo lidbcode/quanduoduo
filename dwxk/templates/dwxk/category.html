@@ -1,10 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>{{cname}}</title>
+    <title>券多多-{{cname}}</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="keywords" content="楚楚客,大微信客，优惠券">
+    <meta name="describe" content="多家知名电商品牌的优质商品">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}"/>
 </head>
 <body>
-MMMMMMMMMMMMMMM
+<div class="search-box">
+    <form>
+        <div class="search-plane">
+            <input type="text" placeholder="请输入商品的名称" name="cname">
+        </div>
+        <div class="search-btn">
+            <button type="submit">搜&nbsp索</button>
+        </div>
+    </form>
+</div>
+<div class="item-list">
+    {% for item in items %}
+    <div class="item clearfix" onclick="javascript:location.href='{{item.coupon_url}}'">
+        <div class="item-left">
+            <image class="item-image" src="{{item.img_url}}"></image>
+        </div>
+        <div class="item-right">
+            <div class="item-name">
+                    <span class="coupon">
+                        <span class="mr3">券</span>
+                        {{item.coupon_value}}元
+                    </span>
+                {{item.ad_name}}
+            </div>
+            <div class="sale-info clearfix">
+                <div class="price-value fl">券后价:<span class="show-price"> {{item.price}}</span>元</div>
+                <div class="sale-num fr">销量 : {{item.sales_num}}</div>
+            </div>
+            <div class="buy clearfix fr ">
+                <button class="buy-button">领券购买</button>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
 </body>
 </html>

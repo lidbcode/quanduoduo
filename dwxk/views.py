@@ -25,7 +25,7 @@ def index(request):
 
 def get_category(request, cid, cname):
     items = models.ItemsInfo.objects.filter(c1=cid)
-    return render(request, 'dwxk/category.html', {'cid': cid, 'cname': cname})
+    return render(request, 'dwxk/category.html', {'items': items, 'cname': cname})
 
 
 def test(requset):
