@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>券多多</title>
+    <title>券多多--搜索</title>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="keywords" content="楚楚客,大微信客，优惠券">
@@ -13,26 +13,14 @@
 <div class="search-box">
     <form action="/search/" method="get">
         <div class="search-plane">
-            <input type="text" placeholder="请输入商品的名称" name="keyword">
+            <input type="text" placeholder="{{keyword}}" name="keyword">
         </div>
         <div class="search-btn">
             <button type="submit">搜&nbsp索</button>
         </div>
     </form>
 </div>
-<div class="category-box">
-    {% for cate in category %}
-    <div class="category-item"
-         onclick="javascript:location.href='{% url 'dwxk:get_category' cid=cate.cid cname=cate.cname %}'">
-        <div class="category-icon">
-            <image src="/static/image/c{{cate.cid}}.png"></image>
-        </div>
-        <div class="categoey-name">{{cate.cname}}</div>
-    </div>
-    {% endfor %}
-    <div class="clear-both"></div>
-</div>
-<div class="item-list">
+<div class="item-list" style="margin-top:2.6em">
     {% for item in items %}
     <div class="item clearfix" onclick="javascript:location.href='{{item.coupon_url}}'">
         <div class="item-left">
