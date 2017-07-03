@@ -35,4 +35,4 @@ def get_search(request):
 
 
 def test(requset):
-    return HttpResponse("welcome to test")
+    return HttpResponse("welcome to test code is delete ")
