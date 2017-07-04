@@ -19,6 +19,7 @@ urlpatterns = [
     url(r'^$', views.test),
     url(r'^index/$', views.index),
     url(r'^search/$', views.get_search, name='get_search'),
-    url(r'^category/(?P<cid>-[0-9]+)/(?P<cname>.+)$', views.get_category, name='get_category'),
+    url(r'^category/(?P<cid>-[0-9]+)/(?P<cname>.+)/$', views.get_category, name='get_category'),
 
+    url(r'^api/get_brand_info/(?P<page>[0-9]+)/$', views.get_brand_info),
 ]

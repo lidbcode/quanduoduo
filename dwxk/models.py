@@ -5,11 +5,10 @@ from django.db import models
 # Create your models here.
 
 
-class ItemsInfo(models.Model):
+class CategoryItems(models.Model):
     id = models.AutoField(primary_key=True)
     ds = models.IntegerField()
     ad_id = models.CharField(max_length=32)
-    item_id = models.CharField(max_length=128)
     ad_name = models.TextField(null=True)
     coupon_value = models.FloatField()
     price = models.FloatField()
@@ -17,3 +16,25 @@ class ItemsInfo(models.Model):
     coupon_url = models.URLField()
     c1 = models.IntegerField()
     sales_num = models.IntegerField()
+
+
+class BrandInfo(models.Model):
+    id = models.AutoField(primary_key=True)
+    ds = models.IntegerField()
+    brand_id = models.CharField(max_length=32)
+    brand_name = models.TextField(null=True)
+    brand_logo = models.URLField()
+
+
+class BrandItems(models.Model):
+    id = models.AutoField(primary_key=True)
+    ds = models.IntegerField()
+    ad_id = models.CharField(max_length=32)
+    ad_name = models.TextField(null=True)
+    coupon_value = models.FloatField()
+    price = models.FloatField()
+    img_url = models.URLField()
+    coupon_url = models.URLField()
+    brand_id = models.IntegerField()
+    sales_num = models.IntegerField()
+

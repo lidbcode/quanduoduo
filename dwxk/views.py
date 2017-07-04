@@ -2,7 +2,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from . import models
-
+from django.core import serializers
 
 # Create your views here.
 
@@ -36,3 +36,15 @@ def get_search(request):
 
 def test(requset):
     return HttpResponse("welcome to test code is delete ")
+
+
+## api
+
+
+def get_brand_info(request,page):
+    start = 8 * (int(page) - 1)
+    end = start + 8 
+    brand = models.BrandInfo.objects.order_by("brand_id")[start:end]
+    return HttpResponse(serializers.serialize("json", brand))
+
+
