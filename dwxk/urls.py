@@ -22,4 +22,6 @@ urlpatterns = [
     url(r'^category/(?P<cid>-[0-9]+)/(?P<cname>.+)/$', views.get_category, name='get_category'),
 
     url(r'^api/get_brand_info/(?P<page>[0-9]+)/$', views.get_brand_info),
+    url(r'^api/get_category_info/$', views.get_category_info),
+    url(r'^api/get_category_items/(?P<page>[0-9]+)/$', views.get_category_items),
 ]
