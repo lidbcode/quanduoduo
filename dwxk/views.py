@@ -65,9 +65,13 @@ def get_category_info(request):
     return HttpResponse(json.dumps(category))
 
 
-def get_category_items(request,page):
+def get_category_items(request,cid,page):
     start = 10 * (int(page) - 1)
     end = start + 10
-    items = models.CategoryItems.objects.order_by("-sales_num")[start:end]
+    items = []
+    if(int(cid) == 0 ):
+        items = models.CategoryItems.objects.order_by("-sales_num")[start:end]
+    else:
+        items = models.CategoryItems.objects.order_by("-sales_num").filter(c1=cid)[start:end]  
     return HttpResponse(serializers.serialize("json", items))
 
