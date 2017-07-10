@@ -42,11 +42,20 @@ def test(requset):
 ## api
 
 
-def get_brand_info(request,page):
-    start = 8 * (int(page) - 1)
-    end = start + 8 
-    brand = models.BrandInfo.objects.order_by("brand_id")[start:end]
+def get_brand_info(request):
+    brand = models.BrandInfo.objects.order_by("brand_id")
     return HttpResponse(serializers.serialize("json", brand))
+
+
+def get_brand_items(request,brand_id,page):
+    start = 10 * (int(page) - 1)
+    end = start + 10
+    items = []
+    if(int(brand_id) == 0 ):
+        items = models.BrandItems.objects.order_by("-sales_num")[start:end]
+    else:
+        items = models.BrandItems.objects.order_by("-sales_num").filter(brand_id = brand_id)[start:end]
+    return HttpResponse(serializers.serialize("json", items))
 
 
 def get_category_info(request):

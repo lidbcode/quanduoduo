@@ -21,7 +21,8 @@ urlpatterns = [
     url(r'^search/$', views.get_search, name='get_search'),
     url(r'^category/(?P<cid>-[0-9]+)/(?P<cname>.+)/$', views.get_category, name='get_category'),
 
-    url(r'^api/get_brand_info/(?P<page>[0-9]+)/$', views.get_brand_info),
+    url(r'^api/get_brand_info/$', views.get_brand_info),
+    url(r'^api/get_brand_items/(?P<brand_id>[0-9]+)/(?P<page>[0-9]+)/$', views.get_brand_items),
     url(r'^api/get_category_info/$', views.get_category_info),
     url(r'^api/get_category_items/(?P<cid>-[0-9]+)/(?P<page>[0-9]+)/$', views.get_category_items),
 ]
