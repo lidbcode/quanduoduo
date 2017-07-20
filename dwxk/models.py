@@ -38,3 +38,24 @@ class BrandItems(models.Model):
     brand_id = models.IntegerField()
     sales_num = models.IntegerField()
 
+
+class ItemsInfo(models.Model):
+    id = models.AutoField(primary_key=True)
+    ds = models.IntegerField()
+    ad_id = models.CharField(max_length=32)
+    ad_name = models.TextField(null=True)
+    coupon_value = models.FloatField()
+    price = models.FloatField()
+    img_url = models.URLField()
+    coupon_url = models.URLField()
+    c1 = models.IntegerField()
+    sales_num = models.IntegerField()
+    brand_id = models.IntegerField(default=0)
+    banner_id = models.IntegerField(default=0)
+
+class BannerInfo(models.Model):
+    id = models.AutoField(primary_key=True)
+    ds = models.IntegerField()
+    banner_id = models.IntegerField()
+    keyword = models.TextField(null=True)
+    img_url = models.URLField()

@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from . import models
 from django.core import serializers
 import json
+from itertools import chain
 
 # Create your views here.
 
@@ -42,6 +43,11 @@ def test(requset):
 ## api
 
 
+def get_banner_info(request):
+    banner = models.BannerInfo.objects.all()
+    return HttpResponse(serializers.serialize("json", banner))
+
+
 def get_brand_info(request):
     brand = models.BrandInfo.objects.order_by("brand_id")
     return HttpResponse(serializers.serialize("json", brand))
@@ -52,9 +58,9 @@ def get_brand_items(request,brand_id,page):
     end = start + 10
     items = []
     if(int(brand_id) == 0 ):
-        items = models.BrandItems.objects.order_by("-sales_num")[start:end]
+        items = models.ItemsInfo.objects.exclude(brand_id = 0).order_by("-sales_num")[start:end]
     else:
-        items = models.BrandItems.objects.order_by("-sales_num").filter(brand_id = brand_id)[start:end]
+        items = models.ItemsInfo.objects.filter(brand_id = brand_id).order_by("-sales_num")[start:end]
     return HttpResponse(serializers.serialize("json", items))
 
 
@@ -81,6 +87,12 @@ def get_category_items(request,cid,page):
     if(int(cid) == 0 ):
         items = models.CategoryItems.objects.order_by("-sales_num")[start:end]
     else:
-        items = models.CategoryItems.objects.order_by("-sales_num").filter(c1=cid)[start:end]  
+        items = models.CategoryItems.objects.filter(c1=cid).order_by("-sales_num")[start:end]  
     return HttpResponse(serializers.serialize("json", items))
 
+
+def get_search_items(request,keyword,page):
+    start = 10 * (int(page) - 1)
+    end = start + 10
+    items = models.BrandItems.objects.filter(ad_name__contains=keyword).order_by("-sales_num")[start:end]
+    return HttpResponse(serializers.serialize("json", items))
