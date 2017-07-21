@@ -27,4 +27,6 @@ urlpatterns = [
     url(r'^api/get_category_info/$', views.get_category_info),
     url(r'^api/get_category_items/(?P<cid>-[0-9]+)/(?P<page>[0-9]+)/$', views.get_category_items),
     url(r'^api/get_search_items/(?P<keyword>.+)/(?P<page>[0-9]+)/$', views.get_search_items),
+    url(r'^api/get_packet_items/(?P<page>[0-9]+)/$', views.get_packet_items),
+    url(r'^api/get_personal_info/$', views.get_personal_info),
 ]

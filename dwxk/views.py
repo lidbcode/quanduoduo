@@ -85,14 +85,25 @@ def get_category_items(request,cid,page):
     end = start + 10
     items = []
     if(int(cid) == 0 ):
-        items = models.CategoryItems.objects.order_by("-sales_num")[start:end]
+        items = models.ItemsInfo.objects.order_by("-sales_num")[start:end]
     else:
-        items = models.CategoryItems.objects.filter(c1=cid).order_by("-sales_num")[start:end]  
+        items = models.ItemsInfo.objects.filter(c1=cid).order_by("-sales_num")[start:end]  
     return HttpResponse(serializers.serialize("json", items))
 
 
 def get_search_items(request,keyword,page):
     start = 10 * (int(page) - 1)
     end = start + 10
-    items = models.BrandItems.objects.filter(ad_name__contains=keyword).order_by("-sales_num")[start:end]
+    items = models.ItemsInfo.objects.filter(ad_name__contains=keyword).order_by("-sales_num")[start:end]
     return HttpResponse(serializers.serialize("json", items))
+
+
+def get_packet_items(request,page):
+    start = 10 * (int(page) - 1)
+    end = start + 10
+    items = models.ItemsInfo.objects.filter(ad_name__contains=u"韩都").order_by("-sales_num")[start:end]
+    return HttpResponse(serializers.serialize("json", items))
+
+def get_personal_info(request):
+    personal_info = {"url":"https://m.chuchutong.com/js/order/vueorder/html/orderindex.html"}
+    return HttpResponse(json.dumps(personal_info))
