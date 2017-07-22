@@ -29,4 +29,5 @@ urlpatterns = [
     url(r'^api/get_search_items/(?P<keyword>.+)/(?P<page>[0-9]+)/$', views.get_search_items),
     url(r'^api/get_packet_items/(?P<page>[0-9]+)/$', views.get_packet_items),
     url(r'^api/get_personal_info/$', views.get_personal_info),
+    url(r'^api/get_red_packet/(?P<imei>.+)/(?P<action>.+)/$', views.get_red_packet),
 ]

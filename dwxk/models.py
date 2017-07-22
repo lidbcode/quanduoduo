@@ -53,9 +53,19 @@ class ItemsInfo(models.Model):
     brand_id = models.IntegerField(default=0)
     banner_id = models.IntegerField(default=0)
 
+
 class BannerInfo(models.Model):
     id = models.AutoField(primary_key=True)
     ds = models.IntegerField()
     banner_id = models.IntegerField()
     keyword = models.TextField(null=True)
     img_url = models.URLField()
+
+
+class UserInfo(models.Model):
+    id = models.AutoField(primary_key=True)
+    imei = models.TextField(null=True)
+    ds = models.IntegerField()
+    value = models.IntegerField(default=0)
+    is_get = models.IntegerField(default=1)
+    is_give = models.IntegerField(default=0)

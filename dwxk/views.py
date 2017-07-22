@@ -5,6 +5,8 @@ from . import models
 from django.core import serializers
 import json
 from itertools import chain
+import time
+import random
 
 # Create your views here.
 
@@ -104,6 +106,20 @@ def get_packet_items(request,page):
     items = models.ItemsInfo.objects.filter(ad_name__contains=u"韩都").order_by("-sales_num")[start:end]
     return HttpResponse(serializers.serialize("json", items))
 
+
 def get_personal_info(request):
     personal_info = {"url":"https://m.chuchutong.com/js/order/vueorder/html/orderindex.html"}
     return HttpResponse(json.dumps(personal_info))
+
+
+def get_red_packet(requset,imei,action):
+    ds = time.strftime("%Y%m%d", time.localtime())
+    res = models.UserInfo.objects.filter(imei=imei).filter(ds=ds).values("value","is_get","is_give").first()
+    if(res == None):
+        if(action == "click"):
+            value = random.randint(1,100)
+            models.UserInfo(imei=imei,ds=ds,value=value,is_get=1).save()
+            res = {'value':value,'is_give':0,'is_get':1}
+        else:
+            res = {'value':0,'is_give':0,'is_get':0}
+    return HttpResponse(json.dumps(res))
