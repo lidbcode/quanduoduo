@@ -30,4 +30,8 @@ urlpatterns = [
     url(r'^api/get_packet_items/(?P<page>[0-9]+)/$', views.get_packet_items),
     url(r'^api/get_personal_info/$', views.get_personal_info),
     url(r'^api/get_red_packet/(?P<imei>.+)/(?P<action>.+)/$', views.get_red_packet),
+    url(r'^api/file_download/(?P<file_name>.+)/$', views.file_download),
+    url(r'^api/get_last_version/$',views.get_last_version),
+
+    url(r'^wx/$', views.wx),
 ]

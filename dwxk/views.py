@@ -7,6 +7,9 @@ import json
 from itertools import chain
 import time
 import random
+import hashlib
+from django.http import StreamingHttpResponse
+from django.db.models import Min,Max,Sum    
 
 # Create your views here.
 
@@ -60,7 +63,7 @@ def get_brand_items(request,brand_id,page):
     end = start + 10
     items = []
     if(int(brand_id) == 0 ):
-        items = models.ItemsInfo.objects.exclude(brand_id = 0).order_by("-sales_num")[start:end]
+        items = models.ItemsInfo.objects.order_by("-sales_num")[start:end]
     else:
         items = models.ItemsInfo.objects.filter(brand_id = brand_id).order_by("-sales_num")[start:end]
     return HttpResponse(serializers.serialize("json", items))
@@ -87,9 +90,9 @@ def get_category_items(request,cid,page):
     end = start + 10
     items = []
     if(int(cid) == 0 ):
-        items = models.ItemsInfo.objects.order_by("-sales_num")[start:end]
+        items = models.ItemsInfo.objects.exclude(brand_id = 0).order_by("-sales_num")[start:end]
     else:
-        items = models.ItemsInfo.objects.filter(c1=cid).order_by("-sales_num")[start:end]  
+        items = models.ItemsInfo.objects.filter(c1=cid)[start:end]  
     return HttpResponse(serializers.serialize("json", items))
 
 
@@ -112,14 +115,72 @@ def get_personal_info(request):
     return HttpResponse(json.dumps(personal_info))
 
 
-def get_red_packet(requset,imei,action):
+def get_red_packet(requset,imei,action): 
     ds = time.strftime("%Y%m%d", time.localtime())
-    res = models.UserInfo.objects.filter(imei=imei).filter(ds=ds).values("value","is_get","is_give").first()
+    max_value = 500
+    wx_name = u'公众号:爱上券开心'
+    res = models.UserInfo.objects.filter(imei=imei,ds=ds).values("value","is_get","is_give").first()
+    total = models.UserInfo.objects.filter(imei=imei,is_give=0).aggregate(Sum('value'))['value__sum']
+    total_value = 0
+    if(total != None):
+        total_value = int(total)
     if(res == None):
         if(action == "click"):
-            value = random.randint(1,100)
+            value = random.randint(100,200)
             models.UserInfo(imei=imei,ds=ds,value=value,is_get=1).save()
-            res = {'value':value,'is_give':0,'is_get':1}
+            res = {'value':value,'is_give':0,'is_get':1,'total':total_value + value, 'max_value':max_value}
         else:
-            res = {'value':0,'is_give':0,'is_get':0}
+            res = {'value':0,'is_give':0,'is_get':0,'total':total_value,'max_value':max_value}
+    else:
+        res['total'] = total_value
+        res['max_value'] = max_value
+    res['wx_name'] = wx_name    
     return HttpResponse(json.dumps(res))
+
+
+def pay_imei(requset,imei):
+    info = models.UserInfo.objects.filter(imei=imei,is_get=1,is_give=0)
+    if(info == None):
+        return HttpResponse(u'此人没有未提现的红包')
+    else:
+        effect = info.update(is_give=1)
+        return HttpResponse(u'已提现' + effect)
+
+
+def file_download(request,file_name):
+    def file_iterator(file_name, chunk_size=1024):
+        with open(file_name) as f:
+            while True:
+                c = f.read(chunk_size)
+                if c:
+                    yield c
+                else:
+                    break
+    response = StreamingHttpResponse(file_iterator(file_name))
+    response['Content-Type'] = 'application/octet-stream'
+    response['Content-Disposition'] = 'attachment;filename="{0}"'.format(file_name)
+    return response
+
+
+## update version 
+
+
+def get_last_version(request):
+    return HttpResponse(0)
+
+
+## wx  
+
+
+def wx(request):
+    signature = request.GET.get('signature', None)
+    timestamp = request.GET.get('timestamp', None)
+    nonce = request.GET.get('nonce', None)
+    echostr = request.GET.get('echostr', None)
+    token = 'coupon'
+    hashlist = [token, timestamp, nonce]
+    hashlist.sort()
+    hashstr = ''.join([s for s in hashlist])
+    hashstr = hashlib.sha1(hashstr).hexdigest()
+    if hashstr == signature:
+      return HttpResponse(echostr)
