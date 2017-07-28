@@ -126,7 +126,7 @@ def get_red_packet(requset,imei,action):
         total_value = int(total)
     if(res == None):
         if(action == "click"):
-            value = random.randint(100,200)
+            value = random.randint(50,150)
             models.UserInfo(imei=imei,ds=ds,value=value,is_get=1).save()
             res = {'value':value,'is_give':0,'is_get':1,'total':total_value + value, 'max_value':max_value}
         else:
