@@ -1,0 +1,97 @@
+/*公共部分*/
+.clearfix:after{
+    clear:both;
+    content:'';
+    font-size:0;
+    display:block;
+    visibility:hidden;
+    height:0
+}
+.f_l {
+    float: left;
+}
+
+.f_r {
+    float: right;
+}
+
+/*顶部图*/
+.head_top {
+    background: url(../image/topbg.jpg) repeat-x;
+    height: 2.6em;
+}
+
+/*头部*/
+.header{
+    height:2.2em;
+}
+.blog_name {
+    padding: 0 0 0.5em 0.1em;
+    font-size: 1.4em;
+    font-family: "微软雅黑", sans-serif;
+    color: #333;
+    font-weight: bold;
+}
+
+.navigation {
+    height: 4em;
+    background: url(/static/image/navbg.png) no-repeat;
+    font-family: "微软雅黑";
+}
+
+.menu {
+    position: relative;
+    padding-top: 0.5em;
+}
+
+.menu li {
+    float: left;
+    width: 10em;
+    text-align: center;
+    position: relative;
+    line-height: 3em;
+    color:#fff;
+    list-style: none;
+}
+
+.container {
+    overflow: hidden;
+    width: 97%;
+    margin: auto;
+    border-left: #d2d2d2 1px solid;
+    border-right: #d2d2d2 1px solid;
+}
+
+.blog_container{
+    width:66%;
+    padding-left:1%;
+}
+
+.blog_content{
+    border-bottom: #d2d2d2 1px solid;
+    margin-top:0.5em;
+}
+
+.blog_content h3 {
+    color: #333;
+    margin-top:0;
+    font-size: 1.0em;
+    font-family: "微软雅黑";
+}
+
+.blog_content p {
+  font-size: 0.8em;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  color: #333;
+}
+
+.adv_container{
+    width:30%;
+    padding-right:1%;
+}
+
