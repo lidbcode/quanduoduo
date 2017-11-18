@@ -10,4 +10,3 @@ flags/*.failed
 repo/org
 conf/*.java
 bin/*
-blog/templates/blog/blog_html/*
