@@ -17,4 +17,5 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.index),
+    url(r'^detail/(?P<blog_id>[0-9]+)/$', views.get_blog_detail, name='get_blog_detail')
 ]

@@ -1,13 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>券多多</title>
+    <title>山野村夫说故事</title>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="keywords" content="楚楚客,大微信客，优惠券">
-    <meta name="describe" content="多家知名电商品牌的优质商品">
+    <meta name="keywords" content="深度学习,机器学习，个人博客">
+    <meta name="describe" content="优质的机器学习资源资源">
     {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/blog_index.css' %}"/>
 </head>
 <body background="/static/image/bg.jpg">
-hello
+<div class="head_top"></div>
+<div style="width:80%;margin-left:10%">
+    <div class="header">
+        <div class="blog_name f_l">山野村夫说故事</div>
+    </div>
+    <div class="navigation">
+        <ul class="menu">
+            <li>学习资料</li>
+            <li>机器学习</li>
+            <li>数据科学</li>
+            <li>读书感悟</li>
+        </ul>
+    </div>
+    <img src="/static/image/shafttop.jpg" style="width:100%;vertical-align:bottom;">
+    <div class="container">
+        <div class="blog_container f_l">
+            {% for blog_info in blog_list %}
+            <div class="blog_content"
+                 onclick="javascript:location.href='{% url 'blog:get_blog_detail' blog_id=blog_info.blog_id%}'">
+                <h3>{{blog_info.title}}</h3>
+                <p> 引言：{{blog_info.introduction}}</p>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="adv_container f_r">
+
+        </div>
+    </div>
+    <img src="/static/image/shaftbottom.jpg" style="width:100%;vertical-align:top;">
+</div>
 </body>
+</html>
